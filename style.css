@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: #040404; /* Dark gray background */
+    color: #fffbf4c8; /* Lightish goldish white font color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: left;
+    font-size: 22px; /* Slightly bigger text */
+}
+
+section {
+    max-width: 500px; /* Reduce the area they are spread over */
+    padding: 20px;
+    text-align: justify; /* Center the text */
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.link-button {
+    color: #fffbf4c8; /* Lightish goldish white color */
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 22px; /* Slightly bigger text */
+    margin: 5px;
+    display: inline-block;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+#links {
+    text-align: center; /* Center the links */
+    padding-bottom: 20px; /* Add some padding at the bottom */
+}
+
+::selection {
+    background: none;
+    color: rgb(255, 68, 0);
+}
