@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 body {
     font-family: 'Old Standard TT', serif;
-    background-color: #101010; /* Dark gray background */
+    background-color: #090909; /* Dark gray background */
     color: #fffbf4c8; /* Lightish goldish white font color */
     display: flex;
     flex-direction: column;
@@ -14,6 +15,11 @@ body {
     font-size: 16px; /* Slightly bigger text */
 }
 
+.name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px; /* Bigger text */
+    margin: 35px;
+}
 
 #cards {
     display: flex;
@@ -44,7 +50,7 @@ body {
     background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y), 
         rgba(255, 255, 255, 0.06), 
-        transparent 40%
+        transparent 35%
     );
     border-radius: inherit;
     content: "";
@@ -62,11 +68,32 @@ h1, h2 {
     text-align: center;
 }
 
+.wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 10px 0;
+    width: 80%; /* Set a fixed width for the wrapper */
+    max-width: 1000px; /* Maximum width for the wrapper */
+    margin: 0 auto; /* Center the wrapper */
+}
+
+.wrapper::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.wrapper .card {
+    flex: 0 0 auto; /* Prevent the cards from shrinking */
+    line-height: 110px;
+    text-align: center;
+    margin-right: 2px;
+}
+
 .link-button {
     color: #fffbf4c8; /* Lightish goldish white color */
     text-decoration: none;
     cursor: pointer;
-    font-size: 18px; /* Slightly bigger text */
+    font-size: 22px; /* Slightly bigger text */
     margin: 5px;
     display: inline-block;
 }
@@ -84,6 +111,5 @@ h1, h2 {
 }
 
 ::selection {
-    background: none;
-    color: rgb(255, 38, 0);
+    background-color: #dd9911eb; /* Lightish goldish white color */
 }
