@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     text-align: left;
     font-size: 16px; /* Slightly bigger text */
@@ -18,7 +18,7 @@ body {
 .name {
     font-family: 'Montserrat', sans-serif;
     font-size: 35px; /* Bigger text */
-    margin: 15px 0;
+    margin: 25px;
     align-self: flex-start; /* Align the heading to the left */
     margin-left: calc(50% - 150px); /* Adjust the margin to align with the leftmost card */
 }
@@ -86,6 +86,7 @@ h1, h2 {
 
 .wrapper .card {
     flex: 0 0 auto; /* Prevent the cards from shrinking */
+    width: 300px; /* Ensure cards have a fixed width */
     line-height: 110px;
     text-align: center;
     margin-right: 2px;
@@ -107,14 +108,13 @@ h1, h2 {
 #links {
     text-align: center; /* Center the links */
     padding: 20px; /* Add some padding to avoid overlap */
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
 ::selection {
-    background: none;
-    color: orange;
+background-color: #edc132da;
 }
 
 /* Media Queries for Mobile Compatibility */
@@ -139,12 +139,13 @@ h1, h2 {
     }
 
     .wrapper {
-        width: 100%; /* Full width for the wrapper on smaller screens */
+        width: 90%; /* Full width for the wrapper on smaller screens */
         padding: 10px; /* Adjust padding for smaller screens */
     }
 
     .wrapper .card {
         width: 90%; /* Adjust card width within the wrapper */
         margin-right: 0; /* Remove right margin */
+        text-align: center; /* Center the text */
     }
 }
