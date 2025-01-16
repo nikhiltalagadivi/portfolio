@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 body {
-    font-family: 'Old Standard TT', serif;
-    background-color: #090909; /* Dark gray background */
-    color: #fffbf4c8; /* Lightish goldish white font color */
+    font-family: 'Space Mono', serif;
+    background-color: #111111; /* Dark gray background */
+    color: #fffbf49f; /* Lightish goldish white font color */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,15 +13,16 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: left;
-    font-size: 16px; /* Slightly bigger text */
+    font-size: 15px; /* Slightly bigger text */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100vw; /* Ensure the body takes the full width of the viewport */
 }
 
 .name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 35px; /* Bigger text */
-    margin: 25px;
-    align-self: flex-start; /* Align the heading to the left */
-    margin-left: calc(50% - 150px); /* Adjust the margin to align with the leftmost card */
+    font-family: 'Space Mono', sans-serif;
+    font-size: 30px; /* Bigger text */
+    margin: 20px;
+    color: #fffbf4c8; /* Lightish goldish white font color */
 }
 
 #cards {
@@ -51,7 +53,7 @@ body {
 .card::before {
     background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y), 
-        rgba(255, 255, 255, 0.06), 
+        rgba(255, 255, 255, 0.071), 
         transparent 40%
     );
     border-radius: inherit;
@@ -78,6 +80,7 @@ h1, h2 {
     width: 80%; /* Set a fixed width for the wrapper */
     max-width: 1000px; /* Maximum width for the wrapper */
     margin: 0 auto; /* Center the wrapper */
+    scroll-snap-type: x mandatory; /* Enable scroll snapping */
 }
 
 .wrapper::-webkit-scrollbar {
@@ -90,13 +93,14 @@ h1, h2 {
     line-height: 110px;
     text-align: center;
     margin-right: 2px;
+    scroll-snap-align: start; /* Snap to the start of each card */
 }
 
 .link-button {
     color: #fffbf4c8; /* Lightish goldish white color */
     text-decoration: none;
     cursor: pointer;
-    font-size: 22px; /* Slightly bigger text */
+    font-size: 15px;
     margin: 5px;
     display: inline-block;
 }
@@ -114,7 +118,7 @@ h1, h2 {
 }
 
 ::selection {
-background-color: #edc132da;
+    background-color: #d39d40df; /* Lightish goldish white color */
 }
 
 /* Media Queries for Mobile Compatibility */
@@ -139,7 +143,7 @@ background-color: #edc132da;
     }
 
     .wrapper {
-        width: 90%; /* Full width for the wrapper on smaller screens */
+        width: 100%; /* Full width for the wrapper on smaller screens */
         padding: 10px; /* Adjust padding for smaller screens */
     }
 
