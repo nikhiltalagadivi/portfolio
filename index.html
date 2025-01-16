@@ -46,5 +46,14 @@
         <a href="https://www.linkedin.com/in/nikhil-talagadivi-a28627254/" class="link-button">LinkedIn</a>
     </footer>
     <script src="java.js"></script>
+    <script>
+        // Enable horizontal scrolling with mouse wheel
+        document.querySelector('.wrapper').addEventListener('wheel', (event) => {
+            if (event.deltaY !== 0) {
+                event.preventDefault();
+                document.querySelector('.wrapper').scrollLeft += event.deltaY;
+            }
+        });
+    </script>
 </body>
 </html>
