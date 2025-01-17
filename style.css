@@ -12,7 +12,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    text-align: left;
+    text-align: center;
     font-size: 15px; /* Slightly bigger text */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100vw; /* Ensure the body takes the full width of the viewport */
@@ -23,6 +23,23 @@ body {
     font-size: 30px; /* Bigger text */
     margin: 20px;
     color: #fffbf4c8; /* Lightish goldish white font color */
+}
+
+.image {
+    border-radius: 20%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px;
+}
+.text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Set a width that doesn't go to the edge */
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center the text */
 }
 
 #cards {
@@ -37,7 +54,7 @@ body {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
     height: auto;
-    width: 300px;
+    width: 350px;
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
@@ -50,6 +67,16 @@ body {
     opacity: 1;
 }
 
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.projects-wrapper .card {
+    flex: 1 1 calc(25% - 20px); /* Adjust the width of the cards as needed */
+    box-sizing: border-box;
+}
 .card::before {
     background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y), 
@@ -89,11 +116,31 @@ h1, h2 {
 
 .wrapper .card {
     flex: 0 0 auto; /* Prevent the cards from shrinking */
-    width: 300px; /* Ensure cards have a fixed width */
-    line-height: 110px;
+    width: 280px; /* Ensure cards have a fixed width */
     text-align: center;
     margin-right: 2px;
     scroll-snap-align: start; /* Snap to the start of each card */
+}
+
+
+.scrollable {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+.scroll-button {
+    background-color: #fffbf4c8; /* Lightish goldish white color */
+    border: none;
+    color: #090909; /* Dark gray color */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.scroll-button:hover {
+    background-color: #d39d40df; /* Slightly darker color on hover */
 }
 
 .link-button {
@@ -103,9 +150,14 @@ h1, h2 {
     font-size: 15px;
     margin: 5px;
     display: inline-block;
+    
 }
 
 .link-button:hover {
+    text-decoration: underline;
+}
+
+.cardlink:hover {
     text-decoration: underline;
 }
 
