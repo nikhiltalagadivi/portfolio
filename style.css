@@ -4,8 +4,8 @@
 
 body {
     font-family: 'Space Mono', serif;
-    background-color: #111111; /* Dark gray background */
-    color: #fffbf49f; /* Lightish goldish white font color */
+    background-color: #111111; 
+    color: #fffbf49f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,16 +13,16 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: center;
-    font-size: 15px; /* Slightly bigger text */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    width: 100vw; /* Ensure the body takes the full width of the viewport */
+    font-size: 15px; 
+    overflow-x: hidden; 
+    width: 100vw; 
 }
 
 .name {
     font-family: 'Space Mono', sans-serif;
-    font-size: 30px; /* Bigger text */
+    font-size: 30px;
     margin: 20px;
-    color: #fffbf4c8; /* Lightish goldish white font color */
+    color: #fffbf4c8; 
 }
 
 .image {
@@ -37,16 +37,16 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Set a width that doesn't go to the edge */
-    max-width: 800px; /* Maximum width */
-    margin: 0 auto; /* Center the text */
+    width: 80%; 
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
 #cards {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    justify-content: center; /* Center the cards */
+    justify-content: center; 
     width: calc(100% - 20px);
 }
 
@@ -58,9 +58,9 @@ body {
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
-    text-align: center; /* Center the text */
+    text-align: center; 
     position: relative;
-    overflow: hidden; /* Ensure the glow effect doesn't overflow */
+    overflow: hidden; 
 }
 
 .card:hover::before {
@@ -70,11 +70,11 @@ body {
 .projects-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap between cards as needed */
+    gap: 20px; 
 }
 
 .projects-wrapper .card {
-    flex: 1 1 calc(25% - 20px); /* Adjust the width of the cards as needed */
+    flex: 1 1 calc(25% - 20px); 
     box-sizing: border-box;
 }
 .card::before {
@@ -99,39 +99,51 @@ h1, h2 {
     text-align: center;
 }
 
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; 
+  }
+
 .wrapper {
     display: flex;
     overflow-x: auto;
     gap: 12px;
     padding: 10px 0;
-    width: 80%; /* Set a fixed width for the wrapper */
-    max-width: 1000px; /* Maximum width for the wrapper */
-    margin: 0 auto; /* Center the wrapper */
-    scroll-snap-type: x mandatory; /* Enable scroll snapping */
+    width: 80%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    scroll-snap-type: x mandatory;
 }
 
 .wrapper::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar */
+    display: none; 
 }
 
 .wrapper .card {
-    flex: 0 0 auto; /* Prevent the cards from shrinking */
-    width: 280px; /* Ensure cards have a fixed width */
+    flex: 0 0 auto; 
+    width: 280px; 
     text-align: center;
     margin-right: 2px;
-    scroll-snap-align: start; /* Snap to the start of each card */
+    scroll-snap-align: start; 
 }
 
 
 .scrollable {
-    max-height: 400px; /* Adjust the height as needed */
+    max-height: 400px; 
     overflow-y: auto;
 }
 
 .scroll-button {
-    background-color: #fffbf4c8; /* Lightish goldish white color */
+    background-color: #fffbf4c8; 
     border: none;
-    color: #090909; /* Dark gray color */
+    color: #090909; 
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
@@ -140,11 +152,11 @@ h1, h2 {
 }
 
 .scroll-button:hover {
-    background-color: #d39d40df; /* Slightly darker color on hover */
+    background-color: #d39d40df; 
 }
 
 .link-button {
-    color: #fffbf4c8; /* Lightish goldish white color */
+    color: #fffbf4c8; 
     text-decoration: none;
     cursor: pointer;
     font-size: 15px;
@@ -162,46 +174,46 @@ h1, h2 {
 }
 
 #links {
-    text-align: center; /* Center the links */
-    padding: 20px; /* Add some padding to avoid overlap */
+    text-align: center; 
+    padding: 20px; 
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
 ::selection {
-    background-color: #d39d40df; /* Lightish goldish white color */
+    background-color: #d39d40df; 
 }
 
-/* Media Queries for Mobile Compatibility */
+
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px; 
     }
 
     .name {
-        font-size: 28px; /* Adjust heading size for smaller screens */
-        margin-left: 20px; /* Adjust margin for smaller screens */
+        font-size: 28px; 
+        margin-left: 20px; 
     }
 
     #cards {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
-        align-items: center; /* Center the cards */
+        flex-direction: column;
+        align-items: center; 
     }
 
     .card {
-        width: 90%; /* Adjust card width for smaller screens */
-        margin-bottom: 20px; /* Add margin between cards */
+        width: 90%; 
+        margin-bottom: 20px; 
     }
 
     .wrapper {
-        width: 100%; /* Full width for the wrapper on smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
+        width: 100%; 
+        padding: 10px; 
     }
 
     .wrapper .card {
-        width: 90%; /* Adjust card width within the wrapper */
-        margin-right: 0; /* Remove right margin */
-        text-align: center; /* Center the text */
+        width: 90%; 
+        margin-right: 0; 
+        text-align: center; 
     }
 }
