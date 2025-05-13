@@ -3,120 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Nikhil Talagadivi - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Logo.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Base font, further customized in style.css via var(--font-primary) */
+        }
+        /* Ensure sections have some top padding for scroll spy to work better with fixed nav */
+        section[id] {
+            scroll-margin-top: 80px; /* Default, will be overridden for mobile in style.css */
+        }
+    </style>
 </head>
-<body>
-    <h1 class="name">👋 Hey, I'm Nikhil.</h1>
-    <div id="cards">
-        <div class="card">🎓 
-            <p>I'm a first year student at UNSW, studying Aerospace Engineering and Computer Science.</p>
-        </div>
-        <div class="card">🤔 
-            <p>Looking at my degree, it's pretty easy to guess what i like... Rockets and Computers :P. I also love dark minimalistic designs, as evident from this website.</p>
-        </div>
-        <div class="card">💻
-           <p>I've developed a range of software projects, including productivity tools, calculators, and interactive applications. You can find my work on GitHub.</p>
-        </div>
-        <div class="card">💼
-            <p>I've also gained practical experience through Qantas Engineering and NSW Police Aviation, exploring the intersection of technology and aviation.</p>
-        </div>
-    </div>
-    
-    <h1 class="name">🌎 Around the world!</h1>
+<body class="bg-gray-900 text-gray-300"> <!-- Tailwind classes provide fallback, style.css vars take precedence -->
 
-    <div class="texts">
-        <div class="text">
-            <p class="paragraph">‘Around the world’ can mean so many things… Rockets and planes circle the globe, and I’ve even traveled halfway around the world for holidays! So, why not share all the things I’m passionate about that connect me to this amazing world?</p>
+    <nav>
+        <div class="nav-content-wrapper">
+            <a href="#" class="nav-logo">NT</a>
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#experience-timeline">Journey</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#links">Connect</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.166 7.758a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-3.51 1.713-6.638 4.389-8.472A.75.75 0 019.528 1.718z" clip-rule="evenodd" /></svg>
+                </button>
+            </div>
         </div>
-    </div>
-    
-    <div class="wrapper">
-        <div class="card">
-            <h2>🇸🇬 Singapore</h2>
-            <img src="cloudforest.JPG" alt="Singapore" class="image">
-            <img src="highup.JPG" alt="Singapore" class="image">
-            <p>Here are a few images from my travels to singapore!</p>
-        </div>
-        <div class="card"> 
-            <h2>🇮🇳 India</h2>
-            <img src="statue.JPG" alt="India" class="image">
-            <img src="waynemanor.JPG" alt="India" class="image">
-            <p>And some more images from my travels to india.</p>
-        </div>
-        <div class="card"> 
-            <h2>SpaceX Starship</h2>            
-            <img src="starship.JPG" alt="Starship" class="image">
-            <img src="starship2.JPG" alt="Starship" class="image">
-            <p>Yeah, this isn't really travel, but I really admire this rocket, and it's potential for the future of humanity. It goes way further than around the world!</p>
+    </nav>
 
-        </div>
-    </div>
+    <header class="text-center py-12 md:py-16 animate-on-scroll" data-animation="anim-fade-up">
+        <h1 class="name text-5xl md:text-6xl font-bold text-white">👋 Hello, I'm Nikhil Talagadivi.</h1>
+        <p class="max-w-2xl mx-auto mt-4 text-lg md:text-xl text-gray-400 animate-on-scroll" data-animation="anim-fade-up" style="animation-delay: 0.2s;">
+            An aspiring Aerospace Engineer and Computer Scientist with a passion for innovation at the intersection of technology, aviation, and complex problem-solving.
+        </p>
+    </header>
 
-    <h1 class="name">More about me...</h1>
-    <div class="wrapper">
-        <div class="card">
-            <h2>Age</h2>
-            <p>Im currently 17 years old turning 18 in March!</p>
+    <section id="about-me" class="py-12 md:py-16 px-4">
+        <h2 class="name text-3xl md:text-4xl font-bold text-white text-center mb-10 md:mb-12 animate-on-scroll" data-animation="anim-fade-up">About Me</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="card animate-on-scroll p-6 md:p-8" data-animation="anim-scale-pop">
+                <h3 class="text-2xl font-semibold text-white mb-3">📖 Academic Pursuits</h3>
+                <p>Currently a first-year student at UNSW, pursuing a Bachelor of Engineering (Aerospace, Honours) and a Bachelor of Science (Computer Science). My academic journey is driven by a deep curiosity for the underlying principles of flight and computation.</p>
+            </div>
+            <div class="card animate-on-scroll p-6 md:p-8" data-animation="anim-scale-pop" style="animation-delay: 0.15s;">
+                <h3 class="text-2xl font-semibold text-white mb-3">🚀 Core Interests</h3>
+                <p>My interests are deeply rooted in aerospace, computing, and physics. I am fascinated by rocketry, aviation technology, software development, and the architectural elegance of complex systems, both physical and digital.</p>
+            </div>
+            <div class="card animate-on-scroll p-6 md:p-8" data-animation="anim-scale-pop" style="animation-delay: 0.3s;">
+                <h3 class="text-2xl font-semibold text-white mb-3">💡 Technical Skills</h3>
+                <p>Proficient in C programming and experienced with SOLIDWORKS for 3D design. I am continuously expanding my technical toolkit, embracing new languages, frameworks, and engineering software.</p>
+            </div>
+            <div class="card animate-on-scroll p-6 md:p-8" data-animation="anim-scale-pop" style="animation-delay: 0.45s;">
+                <h3 class="text-2xl font-semibold text-white mb-3">🎯 Career Aspirations</h3>
+                <p>I am eager to contribute to challenging projects that push the boundaries of technology. My goal is to leverage my dual expertise in aerospace and computer science in innovative roles, whether in engineering, quantitative finance, or software development.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Interests</h2>
-            <p>I have a bunch of interests, including rockets, planes, computers, software, finance, engineering and architecture :D</p>
-        </div>
-        <div class="card">
-            <h2>Career ambitions</h2>
-            <p>Im wherever the moneys at fr 💯, so I am looking at everything from a quant to a finance bro to a softaware engineer to a aerospace engineer</p>
-        </div>
-    </div>
+    </section>
 
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <section id="experience-timeline" class="py-12 md:py-16 px-4">
+        <h2 id="my-journey-heading" class="name text-3xl md:text-4xl font-bold text-white text-center mb-10 md:mb-12 animate-on-scroll" data-animation="anim-fade-up">My Journey</h2>
+        <div class="timeline-container max-w-3xl mx-auto">
+
+            <div class="timeline-item animate-on-scroll" data-animation="anim-slide-right">
+                <div class="timeline-icon">🎓</div>
+                <div class="timeline-content card">
+                    <h3 class="timeline-title">UNSW</h3>
+                    <p class="timeline-subtitle">Bachelor of Engineering (Aerospace, Honours) / Bachelor of Science (Computer Science)</p>
+                    <p class="timeline-date">2025 – Present (Expected 2029)</p>
+                    <p class="timeline-description">
+                        Focusing on aerospace systems, aerodynamics, software development, and data structures. Key skills: C (Programming Language), SOLIDWORKS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll" data-animation="anim-slide-left">
+                <div class="timeline-icon">✈️</div>
+                <div class="timeline-content card">
+                    <h3 class="timeline-title">Qantas Engineering Work Experience</h3>
+                    <p class="timeline-subtitle">Qantas Internship</p>
+                    <p class="timeline-date">August 2022 (1 month)</p>
+                    <p class="timeline-location">Sydney, New South Wales, Australia (On-site)</p>
+                    <p class="timeline-description">
+                        Gained hands-on experience across diverse engineering roles at Qantas, including on-site operations, logistics, and technical support. Developed understanding of engineering and team building in a professional aviation environment.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll" data-animation="anim-slide-right">
+                <div class="timeline-icon">📚</div>
+                <div class="timeline-content card">
+                    <h3 class="timeline-title">Cumberland High School</h3>
+                    <p class="timeline-date">February 2019 – November 2024</p>
+                    <p class="timeline-description">
+                        Achieved ATAR: 95+. Recognized as 2024 Proxime Accessit (Runner-up to Dux). Activities: Peer Support Leader, Certified Student Librarian.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll" data-animation="anim-slide-left">
+                <div class="timeline-icon">🌍</div>
+                <div class="timeline-content card">
+                    <h3 class="timeline-title">Student Volunteer - UN Youth Australia</h3>
+                    <p class="timeline-date">January 2019 – January 2020 (1 year)</p>
+                    <p class="timeline-category">Civil Rights and Social Action</p>
+                    <p class="timeline-description">
+                        Engaged in discussions on social, environmental, and civic issues. Displayed leadership and acted as a voice for youth.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-on-scroll" data-animation="anim-slide-right">
+                <div class="timeline-icon">🏛️</div>
+                <div class="timeline-content card">
+                    <h3 class="timeline-title">Student Volunteer - City of Parramatta</h3>
+                    <p class="timeline-date">June 2021 (1 month)</p>
+                    <p class="timeline-category">Civil Rights and Social Action</p>
+                    <p class="timeline-description">
+                        Discussed economic, civic, and social problems, suggesting improvements for the City of Parramatta. Participated in teamwork and provided insights to council members.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div>
+    <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div>
 
 
-    <a href="https://github.com/nikhiltalagadivi" class="link-button"><h1 class="name"> Check out my projects. </h1> </a>
+    <section id="projects" class="py-12 md:py-16 px-4">
+        <div class="text-center animate-on-scroll" data-animation="anim-fade-up">
+            <a href="https://github.com/nikhiltalagadivi" target="_blank" rel="noopener noreferrer" class="link-button inline-block mb-10 md:mb-12">
+                <h1 class="name text-3xl md:text-4xl font-bold text-white">Explore My Projects</h1>
+            </a>
+        </div>
+        <div class="projects-wrapper flex flex-wrap justify-center gap-6">
+            <div class="card animate-on-scroll" data-animation="anim-scale-pop">
+                <h3 class="text-xl font-semibold text-white mb-2">🎲 Dice Simulator</h3>
+                <p>A comprehensive dice simulator featuring statistical analysis tools for probability exploration.</p>
+            </div>
+            <div class="card animate-on-scroll" data-animation="anim-scale-pop" style="animation-delay: 0.1s;">
+                <h3 class="text-xl font-semibold text-white mb-2">🔒 Lock In - Productivity App</h3>
+                <p>An integrated dashboard for task management, journaling, and cognitive state tracking with analytics.</p>
+            </div>
+            <div class="card animate-on-scroll" data-animation="anim-scale-pop" style="animation-delay: 0.2s;">
+                <h3 class="text-xl font-semibold text-white mb-2">🖱️ Perfect Circle Assistant</h3>
+                <p>A utility designed to achieve high scores in the "Perfect Circle" game on neal.fun through precise mouse control.</p>
+            </div>
+            <div class="card animate-on-scroll" data-animation="anim-scale-pop" style="animation-delay: 0.3s;">
+                <h3 class="text-xl font-semibold text-white mb-2">📐 GeoCalc</h3>
+                <p>A geometric calculator for determining surface area, volume, area, and perimeter of various shapes (Year 11 Project).</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="projects-wrapper">
-        <div class="card">
-            <h2>Dice Simulator</h2>
-            <p>A dice simulator with a bunch of statistics for nerds!</p>
-        </div>
-        <div class="card"> 
-            <h2>Lock In - A Productivity App</h2>
-            <p>An integrated productivity dashboard application that allows you to complete tasks, journal experiences and record your cognitive state, while providing analytics.</p>
-        </div>
-        <div class="card"> 
-            <h2>Mouse Circular Motion</h2>
-            <p>Ever wanted to get a 98%+ score in "Perfect Circle" by neal.fun? Well, install this application and click the x!</p>
-        </div>
-        <div class="card"> 
-            <h2>GeoCalc</h2>
-            <p>A shape surface area, volume, area and perimeter calculator I made as a Year 11 Project.</p>
-        </div>
-    </div>
-    
-    <footer id="links">
-        <h1>Connect with me!</h1>
-        <a href="https://github.com/nikhiltalagadivi" class="link-button">GitHub</a>
-        <a href="https://www.linkedin.com/in/nikhil-talagadivi-a28627254/" class="link-button">LinkedIn</a>
+    <footer id="links" class="text-center py-10 md:py-12 mt-8 animate-on-scroll" data-animation="anim-fade-up">
+        <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6">Connect with Me</h2>
+        <a href="https://github.com/nikhiltalagadivi" target="_blank" rel="noopener noreferrer" class="link-button mx-2">GitHub</a>
+        <a href="https://www.linkedin.com/in/nikhil-talagadivi-a28627254/" target="_blank" rel="noopener noreferrer" class="link-button mx-2">LinkedIn</a>
+        <p class="mt-8 text-sm text-gray-500">© <span id="currentYear"></span> Nikhil Talagadivi. All Rights Reserved.</p>
     </footer>
 
     <script src="java.js"></script>
