@@ -46,7 +46,6 @@ a {
     text-decoration: none;
 }
 
-.site-nav,
 main,
 .site-footer {
     width: var(--page);
@@ -54,11 +53,14 @@ main,
 }
 
 .site-nav {
-    min-height: 76px;
+    position: fixed;
+    top: 28px;
+    left: 28px;
+    z-index: 10;
+    width: 112px;
+    min-height: 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    align-items: flex-start;
 }
 
 .brand {
@@ -89,7 +91,17 @@ main,
     font-size: 0.75rem;
 }
 
+.nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .theme-toggle {
+    position: fixed;
+    top: 28px;
+    right: 28px;
+    z-index: 11;
     appearance: none;
     border: 0;
     padding: 0;
@@ -217,27 +229,48 @@ h3 {
     min-width: 0;
 }
 
-.item div + span {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.item div {
-    grid-column: 2;
-}
-
 .item p {
     max-width: 600px;
     margin-bottom: 0;
     color: var(--muted);
 }
 
-.item span {
+.item .meta {
     color: var(--soft);
     font-family: var(--mono);
     font-size: 0.74rem;
     white-space: nowrap;
     padding-top: 1px;
+}
+
+.ai-glow {
+    color: var(--ink);
+    font-weight: 500;
+    background: linear-gradient(
+        90deg,
+        var(--ink) 0%,
+        var(--ink) 32%,
+        var(--accent) 45%,
+        #ffffff 50%,
+        var(--accent) 55%,
+        var(--ink) 68%,
+        var(--ink) 100%
+    );
+    background-size: 260% 100%;
+    background-position: 120% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: thinking-sweep 3.8s ease-in-out infinite;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes thinking-sweep {
+    0%, 34% {
+        background-position: 120% 0;
+    }
+    72%, 100% {
+        background-position: -120% 0;
+    }
 }
 
 .stack-list {
@@ -270,6 +303,9 @@ h3 {
     }
 
     .site-nav {
+        position: static;
+        width: var(--page);
+        margin: 0 auto;
         align-items: flex-start;
         padding-top: 18px;
     }
@@ -279,8 +315,15 @@ h3 {
     }
 
     .nav-links {
+        flex-direction: row;
         justify-content: flex-end;
         gap: 12px;
+        font-size: 0.7rem;
+    }
+
+    .theme-toggle {
+        top: 18px;
+        right: 12px;
         font-size: 0.7rem;
     }
 
@@ -289,13 +332,31 @@ h3 {
         gap: 5px;
     }
 
-    .item div,
-    .item div + span {
-        grid-column: 1;
-        grid-row: auto;
+    .item .meta {
+        order: -1;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 980px) {
+    .site-nav {
+        position: static;
+        width: var(--page);
+        margin: 0 auto;
+        min-height: 76px;
+        align-items: center;
     }
 
-    .item span {
-        order: -1;
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ai-glow {
+        animation: none;
+        background: none;
+        -webkit-text-fill-color: currentColor;
     }
 }
