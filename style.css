@@ -208,9 +208,22 @@ h3 {
 
 .item {
     display: grid;
-    grid-template-columns: 124px minmax(0, 1fr);
-    gap: 36px;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 28px;
     align-items: start;
+}
+
+.item div {
+    min-width: 0;
+}
+
+.item div + span {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item div {
+    grid-column: 2;
 }
 
 .item p {
@@ -274,6 +287,12 @@ h3 {
     .item {
         grid-template-columns: 1fr;
         gap: 5px;
+    }
+
+    .item div,
+    .item div + span {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .item span {
