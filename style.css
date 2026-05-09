@@ -6,7 +6,7 @@
     --accent: #244cff;
     --sans: "Aptos", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-    --page: min(760px, calc(100vw - 40px));
+    --page: min(700px, calc(100vw - 40px));
 }
 
 body.dark-mode {
@@ -50,6 +50,14 @@ main,
 .site-footer {
     width: var(--page);
     margin: 0 auto;
+}
+
+@media (min-width: 981px) {
+    main,
+    .site-footer {
+        margin-left: clamp(260px, 20vw, 380px);
+        margin-right: auto;
+    }
 }
 
 .site-nav {
@@ -100,7 +108,7 @@ main,
 .theme-toggle {
     position: fixed;
     top: 28px;
-    right: 28px;
+    right: 36px;
     z-index: 11;
     appearance: none;
     border: 0;
@@ -161,10 +169,10 @@ p {
 }
 
 h1 {
-    max-width: 560px;
-    margin-bottom: 16px;
-    font-size: clamp(2.05rem, 5.6vw, 3.45rem);
-    line-height: 1.08;
+    max-width: 520px;
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 4.4vw, 3rem);
+    line-height: 1.12;
     letter-spacing: 0;
     font-weight: 500;
 }
@@ -187,9 +195,16 @@ h3 {
 
 .hero-text {
     max-width: 560px;
-    margin-bottom: 26px;
+    margin-bottom: 8px;
     color: var(--muted);
-    font-size: clamp(1rem, 2vw, 1.12rem);
+    font-size: clamp(0.98rem, 1.7vw, 1.06rem);
+}
+
+.hero-subtext {
+    max-width: 560px;
+    margin-bottom: 24px;
+    color: var(--muted);
+    font-size: 0.94rem;
 }
 
 .text-stack {
