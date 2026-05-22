@@ -372,24 +372,28 @@ h3 {
 }
 
 .premier-item {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 16px rgba(36, 76, 255, 0.12);
     border-radius: 8px;
     padding: 16px;
     margin-left: -17px;
-    transition: border-color 150ms ease, background 150ms ease;
+    transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
     cursor: pointer;
     text-decoration: none;
 }
 .premier-item:hover {
-    border-color: rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.015);
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(36, 76, 255, 0.25);
+    background: rgba(36, 76, 255, 0.03);
 }
 body.dark-mode .premier-item {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(138, 162, 255, 0.6);
+    box-shadow: 0 0 16px rgba(138, 162, 255, 0.15);
 }
 body.dark-mode .premier-item:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.015);
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(138, 162, 255, 0.3);
+    background: rgba(138, 162, 255, 0.06);
 }
 
 
