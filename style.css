@@ -371,4 +371,25 @@ h3 {
     }
 }
 
+.premier-item {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    margin-left: -17px;
+    transition: border-color 150ms ease, background 150ms ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+.premier-item:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.015);
+}
+body.dark-mode .premier-item {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .premier-item:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.015);
+}
+
 
