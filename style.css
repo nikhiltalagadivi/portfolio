@@ -60,6 +60,20 @@ h1 {
     letter-spacing: -0.005em;
 }
 
+.tagline a {
+    color: #2a2a2a;
+    text-decoration: underline;
+    text-decoration-color: #d0d0d0;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color 150ms, text-decoration-color 150ms;
+}
+
+.tagline a:hover {
+    color: #0a0a0a;
+    text-decoration-color: #0a0a0a;
+}
+
 .subtitle {
     margin-top: 4px;
     font-size: 13px;
