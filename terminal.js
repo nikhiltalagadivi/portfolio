@@ -82,15 +82,6 @@ const ENTRIES = [
     },
 ];
 
-const PHOTOS = [
-    { file: "starship.JPG", title: "Starship" },
-    { file: "starship2.JPG", title: "Starship, again" },
-    { file: "highup.JPG", title: "High up" },
-    { file: "cloudforest.JPG", title: "Cloud forest" },
-    { file: "statue.JPG", title: "Statue" },
-    { file: "waynemanor.JPG", title: "Wayne Manor" },
-];
-
 const THEMES = [
     { id: "light", desc: "warm paper" },
     { id: "dark", desc: "the default" },
@@ -285,7 +276,6 @@ const COMMANDS = [
     { name: "/email", desc: "write me an email" },
     { name: "/github", desc: "open my GitHub" },
     { name: "/linkedin", desc: "open my LinkedIn" },
-    { name: "/photos", desc: "a few shots I've taken" },
     { name: "/theme", desc: "switch the color theme" },
     { name: "/home", desc: "go home" },
     { name: "/clear", desc: "clear the scrollback" },
@@ -301,7 +291,7 @@ const ALIASES = {
     "/posts": "/more", "/ls": "/more",
     "/roblox": "/play", "/planetengine": "/play", "/game": "/play",
     "/mail": "/email", "/chat": "/email", "/socials": "/contact", "/links": "/contact",
-    "/gh": "/github", "/li": "/linkedin", "/gallery": "/photos", "/pics": "/photos",
+    "/gh": "/github", "/li": "/linkedin",
     "/cls": "/clear", "clear": "/clear", "/reset": "/home", "cd": "/home", "/cd": "/home",
 };
 
@@ -364,10 +354,6 @@ const HANDLERS = {
     "/github"() { line("opening github.com/nikhiltalagadivi…"); openURL(ME.github); },
     "/linkedin"() { line("opening linkedin…"); openURL(ME.linkedin); },
 
-    "/photos"() {
-        options(PHOTOS.map((p, i) => ({ k: String(i + 1).padStart(2, "0"), v: p.title, action: () => { line(`opening ${p.file}…`); openURL(prefix + p.file); } })), "view");
-    },
-
     "/theme"(args) {
         const current = root.getAttribute("data-scheme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
         if (args) {
@@ -393,7 +379,7 @@ const HANDLERS = {
     // easter eggs
     "sudo"() { line("nice try. you're a guest here.", "t-accent"); },
     "pwd"() { line("/home/guest/nikhil"); },
-    "ls"() { line("about  projects/  experience/  education/  photos/  contact"); },
+    "ls"() { line("about  projects/  experience/  education/  contact"); },
     "date"() { line(new Date().toString()); },
     "echo"(args) { line(args || ""); },
     "exit"() { line("there's no leaving. but /github has more."); },
@@ -432,7 +418,6 @@ function corpus() {
     }));
     ABOUT.forEach((p, i) => docs.push({ kind: "about", title: `paragraph ${i + 1}`, text: p, snippet: p, act: () => line(p, "t-text") }));
     COMMANDS.forEach((c) => docs.push({ kind: "command", title: c.usage || c.name, text: `${c.name} ${c.desc}`, snippet: c.desc, act: () => run(c.usage ? `${c.name} ` : c.name) }));
-    PHOTOS.forEach((p) => docs.push({ kind: "photo", title: p.title, text: `photo picture image ${p.title} ${p.file}`, snippet: p.file, act: () => openURL(prefix + p.file) }));
     docs.push(
         { kind: "contact", title: "email", text: `email mail contact reach hire chat ${ME.email}`, snippet: ME.email, act: () => HANDLERS["/email"]() },
         { kind: "contact", title: "github", text: "github code repos repositories source", snippet: ME.github.replace("https://", ""), act: () => openURL(ME.github) },
